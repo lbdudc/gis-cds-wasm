@@ -1,0 +1,11 @@
+
+
+{
+  "numberField": {
+    "validation": {
+      "decimal": "Débese introducir un número separando a parte decimal cun punto '.'",
+      "integer": "Débese introducir un número enteiro"
+    }
+  }
+}
+

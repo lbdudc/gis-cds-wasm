@@ -1,0 +1,39 @@
+
+{
+  "back": "Atrás",
+  "cancel": "Cancelar",
+  "confirmation": "¿Está seguro de querer continuar?",
+  "continue": "Continuar",
+  "deleteEntity": "Eliminar entidad",
+  "edit": "Editar",
+  "export": "Exportar",
+  "new": "Nuevo",
+  "permanentAction": "Esta acción será permanente",
+  "remove": "Borrar",
+  "save": "Guardar",
+  "search": "Buscar",
+  "showFilters": "Mostrar filtros",
+  "hideFilters": "Ocultar filtros",
+  "showInMap": "Enseñar en el mapa",
+  "propertySelected": "Propiedad seleccionada",
+  "mapSelected": "Mapa seleccionado",
+  "selectMapProperties": "Seleccionar propiedades del mapa",
+  "error": {
+    "required": "Este campo es obligatorio.",
+    "length": {
+      "min": "Este campo debe tener al menos {value} caracteres",
+      "max": "Este campo no debe exceder los {value} caracteres"
+    },
+    "regex": {
+      "customPattern": "Este campo no cumple el formato esperado.",
+      "emailPattern": "Este campo no cumple el formato de un email.",
+      "ipPattern": "Este campo no cumple el formato de una IP.",
+      "urlPattern": "Este campo no cumple el formato de una URL."
+    },
+    "value": {
+      "min": "Este campo debe ser mayor o igual que {value}",
+      "max": "Este campo debe ser menor o igual que {value}"
+    }
+  }
+}
+

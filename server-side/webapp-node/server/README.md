@@ -1,0 +1,1 @@
+emcc --bind -std=c++17 lib/*.c* -o window_query.js window_query.cpp -s MODULARIZE=1 -s EXPORTED_FUNCTIONS="['_windowquery', '_strlength']" --preload-file files -s MAXIMUM_MEMORY=734003200 -s EXPORTED_RUNTIME_METHODS="['ccall', 'cwrap']" -s ALLOW_MEMORY_GROWTH=1 -s ENVIRONMENT='node' --no-entry -s USE_ES6_IMPORT_META=0 -s WASM=1

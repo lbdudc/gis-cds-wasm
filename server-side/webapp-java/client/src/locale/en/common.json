@@ -1,0 +1,179 @@
+{
+  "$vuetify": {
+    "calendar": {
+      "moreEvents": "{0} more"
+    },
+    "dataFooter": {
+      "firstPage": "First page",
+      "itemsPerPageAll": "All",
+      "itemsPerPageText": "Items per page:",
+      "lastPage": "Last page",
+      "nextPage": "Next page",
+      "pageText": "{0}-{1} of {2}",
+      "prevPage": "Previous page"
+    },
+    "dataTable": {
+      "ariaLabel": {
+        "activateAscending": "Activate to sort ascending.",
+        "activateDescending": "Activate to sort descending.",
+        "activateNone": "Activate to not sort",
+        "sortAscending": ": Sorted ascending.",
+        "sortDescending": ": Sorted descending.",
+        "sortNone": ": Not sorted."
+      },
+      "itemsPerPageText": "Rows per page:",
+      "sortBy": "Sort by"
+    },
+    "noDataText": "No data available.",
+    "timePicker": {
+      "am": "AM",
+      "pm": "PM"
+    },
+    "dataIterator": {
+      "loadingText": "Loading data",
+      "noResultsText": "No results."
+    },
+    "pagination": {
+      "ariaLabel": {
+        "currentPage": "Current page",
+        "next": "Next",
+        "page": "Page",
+        "previous": "Previous",
+        "wrapper": "Wrapper"
+      }
+    }
+  },
+  "activateFilter": {
+    "label": "Activate filter",
+    "tooltip": "When checked, {param} filter is applied"
+  },
+  "autocomplete": {
+    "items_selected": " + {count} others",
+    "select_all": "Select all"
+  },
+  "default": "Default",
+  "delete": "Delete",
+  "exit": "Exit",
+  "errors": {
+    "generic": "An unexpected error has occurred",
+    "badRequestError": "There are errors in the request sent",
+    "internalServerError": "Internal server error occurred",
+    "serverUnavailable": {
+      "title": "Connection problem",
+      "content": "Could not connect to the server"
+    },    "defaultServerErrorMessage": "An unexpected error has occurred"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Spanish",
+    "gl": "Galician"
+  },
+  "menu": {
+    "about": "About",
+    "activitiesStatistics": "Activities Statistics",
+    "autoassign": "Geolocate",
+    "clientList": "Client List",
+    "components": "Components",
+    "employeeList": "Employee List",
+    "visitCalendar": "Visit Calendar",
+    "home": "Home",
+    "language": "Language",
+    "list": "List",
+    "lists": "Lists",
+    "logIn": "Login",
+    "loggedAs": "Logged as ",
+    "admin": "Administrator",
+    "registeredUser": "Registered User",
+    "employee": "Employee",
+    "logout": "Logout",
+    "mapViewer": "Map Viewer",
+    "maps": "Maps",
+    "myProfile": "My Profile",
+    "plannedVisits": "Planned Visits",
+    "planning": "Planning",
+    "realtime": "Position of employees",
+    "activityHistory": "Activity history",
+    "sensorData": "Sensor data",
+    "shapefile": "Shapefile importer",
+    "staff": "Staff",
+    "staticPages": "Static Pages",
+    "userManagement": "User Management",
+    "management": "Management",
+    "mobilityAnalysis": "Mobility Analysis",
+    "mobilityQuery": "Mobility Query",
+    "visits_record": "Visits record"
+  },
+  "modal": {
+    "delete_dialog": "<p>This action will be permanent. <b>Do you want to continue?</b></p>",
+    "delete_title": "Remove element"
+  },
+  "notLogged": "not logged",
+  "badRequestError": "There are errors in the request sent",
+  "psql": {
+    "exception": "An internal database exception occured"
+  },
+  "iGImage": {
+    "error": {
+      "id-exists": "A new iGImage cannot already have an ID",
+      "id-not-exists": "Updating an iGImage without an ID"
+    }
+  },
+  "upload": {
+    "file_required": "File not provided",
+    "invalid_extension": "Format not supported '{param}'"
+  },
+  "geolocation": {
+    "geolocator_not_supported": "Geolocator not supported"
+  },
+  "import": {
+    "column_duplicated": "Column '{param}' is duplicated",
+    "crs_not_valid": "CRS not valid '{param}'",
+    "date_format_custom_not_provided": "No custom date format provided",
+    "date_format_not_provided": "No date format provided",
+    "date_cannot_be_parsed": "Date '{param}' cannot be parsed",
+    "empty_value_exception": "No value received for field '{param}'",
+    "encoding_not_provided": "Encoding not provided",
+    "entity_pk_already_exists": "An entity with primary key '{param}' already exists",
+    "excel_cell_type_not_supported": "Excel cell type not supported",
+    "excel_date_fields_not_supported": "Excel date fields not supported",
+    "excel_row_empty": "Excel row {param} is empty",
+    "field_point_required_properties": "Not all required values to create a point provided",
+    "file_or_url_not_provided": "No file or URL provided",
+    "file_in_url_not_exists": "Provided URL does not contains a file",
+    "file_not_provided": "File not provided",
+    "file_not_supported": "File not supported",
+    "unable_to_read_file": "File cannot be read",
+    "gis_file_not_provided": "GIS file not provided",
+    "gis_file_repeated": "GIS File '{param}' repeated",
+    "gis_mandatory_files": "Missing mandatory GIS files",
+    "date_invalid_pattern": "Provided date pattern is not valid",
+    "invalid_fk": "Invalid foreign key '{param}'",
+    "latitude_min_max_equals": "Latitude min equals to longitude max'{param}'",
+    "latitude_not_valid": "Latitude not valid '{param}'",
+    "latitude_reversed": "Latitude reversed '{param}'",
+    "longitude_not_valid": "Longitude not valid '{param}'",
+    "longitude_reversed":  "Longitude reversed '{param}'",
+    "column_none": "No column provided",
+    "ods_undefined_rows_cols": "No rows / columns have been defined for ods file",
+    "url_not_provided": "URL not provided",
+    "url_not_valid": "No file or URL provided",
+    "value_format_exception": "Value '{param}' is not valid",
+    "wrong_column_size": "Column '{params}' has invalid number of columns"
+  },
+  "internalServerError": "Internal server error ocurred",
+  "invalid_id_type": "Invalid ID: expected type is {type}",
+  "page_not_found": {
+    "title": "Page not found",
+    "subtitle": "The page you're trying to get doesn't exists.",
+    "body": "Try going back to home page and repeating your action, or check the URL you entered.",
+    "button": "Go to home page"
+  },
+  "resource_not_found": {
+    "title": "Resource not found",
+    "subtitle": "The resource you're trying to get doesn't exists.",
+    "body": "Try going back to home page and repeating your action, or check the URL you entered.",
+    "button": "Go to home page",
+    "route_param" : "resource_not_found"
+  },
+  "waitingServer": "Waiting for server response..."
+}

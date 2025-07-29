@@ -1,0 +1,24 @@
+
+{
+  "calendar": {
+    "accept": "Aceptar",
+    "cancel": "Cancelar",
+    "date": "Data",
+    "endTime": "Hora fin",
+    "initTime": "Hora inicio",
+    "dateFormat": "Formato DD/MM/AAAA",
+    "timeFormat": "Formato HH:MM",
+    "endTimeValidationError": "A hora de fin debe ser posterior á hora de inicio",
+    "timeNotNull": "Debe especificar unha hora",
+    "dateNotNull": "Debe especificar unha data",
+    "dayOfWeek": {
+      "0": "Dom {dayAsNumber}",
+      "1": "Lun {dayAsNumber}",
+      "2": "Mar {dayAsNumber}",
+      "3": "Mer {dayAsNumber}",
+      "4": "Xov {dayAsNumber}",
+      "5": "Ven {dayAsNumber}",
+      "6": "Sab {dayAsNumber}"
+    }
+  }
+}

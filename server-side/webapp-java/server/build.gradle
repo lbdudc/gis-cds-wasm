@@ -1,0 +1,70 @@
+plugins {
+  id "org.springframework.boot" version "3.0.6"
+  id "com.diffplug.spotless" version "6.19.0"
+  id "java"
+  id "com.github.ManifestClasspath" version "0.1.0-RELEASE"
+}
+
+apply plugin: "io.spring.dependency-management"
+apply plugin: "application"
+apply plugin: "eclipse"
+mainClassName = "es.udc.lbd.gema.lps.Application"
+
+group = "es.udc.lbd.gema"
+version = "0.0.1"
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+repositories {
+  maven { url "http://download.osgeo.org/webdav/geotools/"
+    allowInsecureProtocol = true
+  }
+  maven { url "https://repo.osgeo.org/repository/release/"
+    allowInsecureProtocol = true
+  }
+  maven { url "http://maven.geotoolkit.org/"
+    allowInsecureProtocol = true
+  }
+  maven { url "http://jasperreports.sourceforge.net/maven2/"
+    allowInsecureProtocol = true
+  }
+  mavenCentral()
+}
+
+dependencies {
+  implementation "org.springframework.boot:spring-boot-starter-actuator"
+  implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+  implementation "org.springframework.boot:spring-boot-starter-validation"
+  implementation "org.springframework.boot:spring-boot-starter-web"
+  implementation "org.quartz-scheduler:quartz:2.3.2"
+  implementation "org.springframework.boot:spring-boot-starter-quartz"
+  implementation "org.hibernate:hibernate-spatial:6.2.6.Final"
+  implementation "org.geotools:gt-geojson:26.4"
+  implementation "org.geotools:gt-shapefile:26.4"
+  implementation "org.geotools:gt-epsg-hsql:26.4"
+
+  implementation 'jakarta.inject:jakarta.inject-api:2.0.1'
+  implementation "com.fasterxml.jackson.core:jackson-databind"
+  implementation "commons-beanutils:commons-beanutils:1.9.4"
+  runtimeOnly "org.postgresql:postgresql:42.3.8"
+
+  implementation "net.kaczmarzyk:specification-arg-resolver:2.6.2"
+
+
+
+  testImplementation "org.springframework.boot:spring-boot-starter-test"
+}
+
+spotless {
+  java {
+    googleJavaFormat()
+  }
+}
+
+bootRun {
+  if (project.hasProperty('args')) {
+    args project.args.split(',')
+  }
+}
+
+compileJava.dependsOn "spotlessApply"

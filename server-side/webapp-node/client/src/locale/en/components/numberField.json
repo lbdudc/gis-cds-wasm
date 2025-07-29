@@ -1,0 +1,8 @@
+{
+  "numberField": {
+    "validation": {
+      "decimal": "Input must be any number separating decimal part with a dot '.'",
+      "integer": "Input must be an integer number"
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "layers": [
+    {
+      "layerType": "tilelayer",
+      "name": "OpenStreetMap.Mapnik",
+      "options": {
+        "params": {
+          "attribution": "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+        }
+      },
+      "url": "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    },
+    {
+      "layerType": "tilelayer",
+      "name": "Esri.WorldStreetMap",
+      "options": {
+        "params": {
+          "attribution": "Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012"
+        }
+      },
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
+    },
+    {
+      "layerType": "tilelayer",
+      "name": "Stamen.Terrain",
+      "options": {
+        "params": {
+          "attribution": "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"
+        },
+        "maxZoom": 18,
+        "minZoom": 0,
+        "subdomains": "abcd"
+      },
+      "url": "https://tiles.stadiamaps.com/tiles/stamen_terrain/{z}/{x}/{y}.png"
+    },
+    {
+      "layerType": "tilelayer",
+      "name": "Stamen.TonerLite",
+      "options": {
+        "params": {
+          "attribution": "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"
+        },
+        "maxZoom": 20,
+        "minZoom": 0,
+        "subdomains": "abcd"
+      },
+      "url": "https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}.png"
+    },
+    {
+      "layerType": "geojson",
+      "name": "raster-geometry-1",
+      "availableStyles": [],
+      "level": 1,
+      "selected": true,
+      "minZoom": 1,
+      "maxZoom": 3,
+      "url": "entities/rasters/geom/geometry"
+    },
+    {
+      "layerType": "geojson",
+      "name": "raster-geometry-2",
+      "availableStyles": [],
+      "level": 2,
+      "selected": false,
+      "minZoom": 4,
+      "maxZoom": 4,
+      "url": "entities/rasters/geom/geometry"
+    },
+    {
+      "layerType": "geojson",
+      "name": "raster-geometry-3",
+      "availableStyles": [],
+      "level": 3,
+      "selected": false,
+      "minZoom": 5,
+      "maxZoom": 5,
+      "url": "entities/rasters/geom/geometry"
+    },
+    {
+      "layerType": "geojson",
+      "name": "raster-geometry-4",
+      "availableStyles": [],
+      "level": 4,
+      "selected": false,
+      "minZoom": 6,
+      "maxZoom": 6,
+      "url": "entities/rasters/geom/geometry"
+    },
+    {
+      "layerType": "geojson",
+      "name": "raster-geometry-5",
+      "availableStyles": [],
+      "level": 5,
+      "selected": false,
+      "minZoom": 7,
+      "maxZoom": 7,
+      "url": "entities/rasters/geom/geometry"
+    },
+    {
+      "layerType": "geojson",
+      "name": "raster-geometry-6",
+      "availableStyles": [],
+      "level": 6,
+      "selected": false,
+      "minZoom": 8,
+      "maxZoom": 8,
+      "url": "entities/rasters/geom/geometry"
+    },
+    {
+      "layerType": "geojson",
+      "name": "raster-geometry-7",
+      "availableStyles": [],
+      "level": 7,
+      "selected": false,
+      "minZoom": 9,
+      "maxZoom": 9,
+      "url": "entities/rasters/geom/geometry"
+    },
+    {
+      "layerType": "geojson",
+      "name": "raster-geometry-8",
+      "availableStyles": [],
+      "level": 8,
+      "selected": false,
+      "minZoom": 10,
+      "maxZoom": 10,
+      "url": "entities/rasters/geom/geometry"
+    },
+    {
+      "layerType": "geojson",
+      "name": "raster-geometry-9",
+      "availableStyles": [],
+      "level": 9,
+      "selected": false,
+      "minZoom": 11,
+      "maxZoom": 11,
+      "url": "entities/rasters/geom/geometry"
+    },
+    {
+      "layerType": "geojson",
+      "name": "raster-geometry-10",
+      "availableStyles": [],
+      "level": 10,
+      "selected": false,
+      "minZoom": 12,
+      "maxZoom": 18,
+      "url": "entities/rasters/geom/geometry"
+    }
+  ]
+}

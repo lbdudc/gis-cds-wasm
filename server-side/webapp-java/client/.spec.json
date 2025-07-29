@@ -1,0 +1,140 @@
+{
+  "features": [
+    "GEMA_SPL",
+    "DataManagement",
+    "GraphicalUserInterface",
+    "MapViewer",
+    "Tools",
+    "DM_SpatialDatabase",
+    "DM_GenerationType",
+    "DM_DataServer",
+    "MV_MapServer",
+    "MV_Tools",
+    "MV_MapManagement",
+    "DM_SD_PostGIS",
+    "MV_MM_UniqueMapViewer",
+    "MV_MM_UMV_MapCenter",
+    "MV_MM_UMV_MC_BBox",
+    "DM_GT_Sequence",
+    "T_Quartz",
+    "MV_MS_GeoJSON",
+    "MV_MS_GJ_Paginated",
+    "Deploy",
+    "D_Containers",
+    "D_C_Nginx",
+    "D_C_Postgres",
+    "GUI_Menu",
+    "GUI_M_Position",
+    "GUI_M_Top",
+    "T_GIS"
+  ],
+  "data": {
+    "basicData": {
+      "index": {
+        "component": "STATIC",
+        "view": "welcome"
+      },
+      "languages": [
+        "en",
+        "es",
+        "gl"
+      ],
+      "name": "wasm",
+      "packageInfo": {
+        "artifact": "wasm",
+        "group": "es.udc.lbd.gisspl"
+      },
+      "database": {},
+      "extra": {},
+      "SRID": "4326",
+      "version": "0.0.1"
+    },
+    "dataModel": {
+      "enums": [],
+      "entities": [
+        {
+          "name": "Raster",
+          "properties": [
+            {
+              "name": "id",
+              "class": "Long (autoinc)",
+              "pk": true,
+              "required": true,
+              "unique": true
+            },
+            {
+              "name": "geometry",
+              "class": "Geometry",
+              "patternType": null,
+              "pattern": null,
+              "min": null,
+              "max": null
+            },
+            {
+              "name": "level",
+              "class": "Integer",
+              "patternType": null,
+              "pattern": null
+            }
+          ],
+          "displayString": "$id"
+        }
+      ]
+    },
+    "forms": [],
+    "gui": {
+      "settings": {
+        "font": {
+          "family": "Arial",
+          "size": "14px"
+        },
+        "colorset": [
+          "#fff",
+          "#eee",
+          "#777",
+          "#555",
+          "#577492",
+          "#333",
+          "#222"
+        ],
+        "header": {
+          "type": "Text",
+          "text": "wasm"
+        }
+      },
+      "design": "1"
+    },
+    "lists": [],
+    "menus": [
+      {
+        "id": "top",
+        "elements": [
+          {
+            "id": "Components",
+            "type": "MENU",
+            "elements": [
+              {
+                "id": "Map viewer",
+                "type": "VIEW",
+                "view": {
+                  "component": "MAP",
+                  "view": "mapViewer"
+                }
+              }
+            ],
+            "access": {
+              "admin": true,
+              "logged": true
+            }
+          }
+        ]
+      }
+    ],
+    "mapViewer": {
+      "maps": [],
+      "layers": [],
+      "styles": []
+    },
+    "statics": []
+  }
+}

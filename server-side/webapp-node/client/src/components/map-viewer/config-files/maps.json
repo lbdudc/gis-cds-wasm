@@ -1,0 +1,41 @@
+{
+  "maps": [
+    {
+      "name": "default",
+      "layerManager": "default",
+      "sortable": false,
+      "center": {
+        "lat": 64,
+        "lng": -97.16,
+        "zoom": 3
+      },
+      "layers": [
+        {
+          "name": "Stamen.Terrain",
+          "baseLayer": true,
+          "order": 1
+        },
+        {
+          "name": "Stamen.TonerLite",
+          "baseLayer": true,
+          "order": 2
+        },
+        {
+          "name": "OpenStreetMap.Mapnik",
+          "baseLayer": true,
+          "order": 3
+        },
+        {
+          "name": "Esri.WorldStreetMap",
+          "baseLayer": true,
+          "order": 4
+        },
+        {
+          "name": "raster-geometry",
+          "order": 1,
+          "selected": true
+        }
+      ]
+    }
+  ]
+}

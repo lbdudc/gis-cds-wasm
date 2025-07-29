@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    host: wasm-postgres
+    username: postgres
+    password: postgres
+    port: 5432
+    database: gema
+server:
+  uploads: upload
+  temporaryUploads: temporary
+  #Default internal page size (Used for some high database usage methods)
+  pageSize: 3
+  port: 9001
+security-properties:
+logging:
+  level:
+    root: INFO
+    es.udc.lbd.gema.lps: DEBUG
+    es.udc.lbd.gema.lps.model.util.EnumConverter: ERROR
+properties:
+  clientURL: http://localhost:1234
+  serverURL: http://localhost:8080
+  environment: prod
