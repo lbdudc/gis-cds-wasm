@@ -8,8 +8,10 @@ This repository contains a Proof of Concept (PoC) for GIS functionalities, explo
 - Server-side
   - [webapp-java (Server-side)](#webapp-java-server-side)
   - [webapp-node](#webapp-node)
-- [WASM Compilation](#wasm-compilation)
-- [Testing](#testing)
+- [WASM Compilation](#-wasm-compilation)
+- [Testing](#-testing)
+- [Contributing](#-contributing)
+- [License](#-license)
 - [Authors](#-authors)
 
 ## 🚀 Getting Started
@@ -92,6 +94,14 @@ npm run test
 ```
 
 Specific test configurations and details can be found within the respective client and server directories.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please open issues or merge requests via GitHub.
+
+## 📄 License
+
+This project is licensed under the MIT License.
 
 ## 👥 Authors
 

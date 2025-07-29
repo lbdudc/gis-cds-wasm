@@ -2,14 +2,11 @@
 
 ## Table of Contents
 
-- [Project Overview](#project-overview)
-- [Project Structure](#project-structure)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
-- [Authors](#authors)
+- [Project Overview](#-project-overview)
+- [Project Structure](#-project-structure)
+- [Features](#-features)
+- [Getting Started](#-getting-started)
+- [Testing](#-testing)
 
 
 ## 📄 Project Overview
@@ -72,15 +69,3 @@ npm run test
 ```
 
 This command executes the `benchmark.js` script, which may use Selenium and Chromedriver for browser-based testing.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please open issues or merge requests via GitLab.
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 👥 Authors
-
-See [../../README.md](../../README.md#authors) for the full list of contributors.

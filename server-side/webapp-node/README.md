@@ -2,16 +2,13 @@
 
 ## Table of Contents
 
-- [Project Overview](#project-overview)
-- [Project Structure](#project-structure)
-- [Technologies Used](#technologies-used)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [WASM Compilation](#wasm-compilation)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
-- [Authors](#authors)
+- [Project Overview](#-project-overview)
+- [Project Structure](#-project-structure)
+- [Technologies Used](#-technologies-used)
+- [Features](#-features)
+- [Getting Started](#-getting-started)
+- [WASM Compilation](#-wasm-compilation)
+- [Testing](#-testing)
 
 ## 📄 Project Overview
 
@@ -112,15 +109,3 @@ npm run test
 ```
 
 This command executes the `benchmark.js` script, which reads a list of bounding boxes and sends repeated requests to the API to measure response times. It outputs individual and average timings to the console.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please open issues or merge requests via GitLab.
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 👥 Authors
-
-See [../../README.md](../../README.md#authors) for the full list of contributors.

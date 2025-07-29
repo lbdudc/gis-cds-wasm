@@ -2,16 +2,13 @@
 
 ## Table of Contents
 
-- [Project Overview](#project-overview)
-- [Project Structure](#project-structure)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [WASM Compilation](#wasm-compilation)
-- [Testing](#testing)
-- [Known Issues](#known-issues)
-- [Contributing](#contributing)
-- [License](#license)
-- [Authors](#authors)
+- [Project Overview](#-project-overview)
+- [Project Structure](#-project-structure)
+- [Features](#-features)
+- [Getting Started](#-getting-started)
+- [WASM Compilation](#-wasm-compilation)
+- [Testing](#-testing)
+- [Known Issues](#-known-issues)
 
 
 ## 📄 Project Overview
@@ -90,15 +87,3 @@ This command executes the `benchmark.js` script, which may use Selenium and Chro
 
 - Large spatial datasets may impact browser memory usage
 - WASM module must be compiled with the correct flags for browser compatibility
-
-## 🤝 Contributing
-
-Contributions are welcome! Please open issues or merge requests via GitLab.
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 👥 Authors
-
-See [../../README.md](../../README.md#authors) for the full list of contributors.
