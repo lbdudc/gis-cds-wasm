@@ -16,7 +16,7 @@ This repository contains a Proof of Concept (PoC) for GIS functionalities, explo
 ### 1. Clone the Repository
 
 ```sh
-git clone https://gitlab.lbd.udc.es/wasm-cds/gis-poc/gis-poc-collection.git
+git clone https://github.com/lbdudc/gis-cds-wasm.git
 ```
 
 ## 🌐 Client-side

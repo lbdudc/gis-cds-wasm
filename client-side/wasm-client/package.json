@@ -1,0 +1,21 @@
+{
+  "name": "client-side-map-leaflet",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "http-server . -p 8080",
+    "generate:geoms": "node generate_bboxes.js",
+    "test": "node benchmark.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "dependencies": {
+    "chromedriver": "^137.0.4",
+    "selenium-webdriver": "^4.33.0"
+  }
+}
