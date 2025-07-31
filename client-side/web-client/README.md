@@ -17,7 +17,7 @@ A client-side web application demonstrating map rendering and geospatial operati
 ## 🗂 Project Structure
 
 ```
-client-side/webapp-java/
+client-side/web-client/
   ├── index.html         # Main HTML entry point for the application
   ├── benchmark.js       # Optional script used to run performance benchmarks on spatial queries
   └── README.md          # This file

@@ -4,9 +4,9 @@ This repository contains a Proof of Concept (PoC) for GIS functionalities, explo
 ## Table of Contents
 - Client-side
   - [wasm-client](#wasm-client)
-  - [webapp-java (Client-side)](#webapp-java-client-side)
+  - [web-client](#web-client)
 - Server-side
-  - [webapp-java (Server-side)](#webapp-java-server-side)
+  - [webapp-java](#webapp-java)
   - [webapp-node](#webapp-node)
 - [WASM Compilation](#-wasm-compilation)
 - [Testing](#-testing)
@@ -28,10 +28,10 @@ This project demonstrates a client-side architecture for handling spatial data l
 
 See [client-side/wasm-client/README.md](client-side/wasm-client/README.md) for more details.
 
-### webapp-java (Client-side)
+### web-client
 A client-side web application demonstrating map rendering and geospatial operations using Leaflet.js. This project is part of the GIS PoC (Proof of Concept) for the WASM-CDS initiative.
 
-See [client-side/webapp-java/README.md](client-side/webapp-java/README.md) for more details.
+See [client-side/web-client/README.md](client-side/web-client/README.md) for more details.
 
 ---
 
@@ -42,7 +42,7 @@ This project is a full-stack web application featuring a Vue.js frontend and a N
 
 See [server-side/webapp-node/README.md](server-side/webapp-java/README.md) for more details.
 
-### webapp-java (Server-side)
+### webapp-java
 This project is a full-stack web application featuring a Vue.js frontend and a Spring Boot backend, with PostgreSQL for geometry data storage. It includes a map viewer to display spatial geometries loaded via an external importer script.
 
 See [server-side/webapp-java/README.md](server-side/webapp-java/README.md) for more details.
