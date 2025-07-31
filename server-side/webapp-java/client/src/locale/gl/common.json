@@ -1,0 +1,218 @@
+
+{
+  "$vuetify": {
+    "calendar": {
+      "moreEvents": "{0} máis"
+    },
+    "dataFooter": {
+      "firstPage": "Primeira páxina",
+      "itemsPerPageAll": "Todos",
+      "itemsPerPageText": "Filas por páxina:",
+      "lastPage": "Última páxina",
+      "nextPage": "Seguinte páxina",
+      "pageText": "{0}-{1} de {2}",
+      "prevPage": "Páxina anterior"
+    },
+    "dataTable": {
+      "ariaLabel": {
+        "activateAscending": "Activar para ordenar en ascendente",
+        "activateDescending": "Activar para ordenar en descendente.",
+        "activateNone": "Activar para non ordenar",
+        "sortAscending": ": Orde ascendente.",
+        "sortDescending": ": Orde descendente.",
+        "sortNone": ": Non ordenado."
+      },
+      "itemsPerPageText": "Filas por páxina:",
+      "sortBy": "Ordenado por"
+    },
+    "noDataText": "Non hai datos dispoñibles.",
+    "timePicker": {
+      "am": "AM",
+      "pm": "PM"
+    },
+    "dataIterator": {
+      "loadingText": "Cargando datos",
+      "noResultsText": "Sen resultados."
+    },
+    "pagination": {
+      "ariaLabel": {
+        "currentPage": "Páxina actual",
+        "next": "Seguinte",
+        "page": "Páxina",
+        "previous": "Anterior",
+        "wrapper": "Envoltorio"
+      }
+    }
+  },
+  "activateFilter": {
+    "label": "Activar filtro",
+    "tooltip": "Cando está marcado, o filtro de {param} é aplicado"
+  },
+  "autocomplete": {
+    "items_selected": " + outros {count}",
+    "select_all": "Seleccionar todo"
+  },
+  "default": "Por defecto",
+  "delete": "Eliminar",
+  "exit": "Saír",
+  "errors": {
+    "generic": "Ocorreu un erro inesperado",
+    "badRequestError": "Hai erros na petición enviada",
+    "internalServerError": "Ocorreu un erro interno no servidor",
+    "serverUnavailable": {
+      "title": "Problema de conexión",
+      "content": "Non se puido conectar co servidor"
+    },    "defaultServerErrorMessage": "Produciuse un erro inesperado"
+  },
+  "languages": {
+    "en": "Inglés",
+    "es": "Español",
+    "gl": "Galego"
+  },
+  "menu": {
+    "about": "Máis",
+    "activitiesStatistics": "Estadísticas de Actividades",
+    "autoassign": "Xeolocalizar",
+    "clientList": "Lista Clientes",
+    "components": "Compoñentes",
+    "employeeList": "Lista Empregados",
+    "visitCalendar": "Calendario de Visitas",
+    "home": "Inicio",
+    "language": "Idioma",
+    "list": "Lista",
+    "lists": "Listas",
+    "logIn": "Autenticarse",
+    "loggedAs": "Autenticado como ",
+    "admin": "Administrador",
+    "registeredUser": "Usuario Rexistrado",
+    "employee": "Empregado",
+    "logout": "Saír",
+    "mapViewer": "Visor de mapas",
+    "maps": "Mapas",
+    "myProfile": "O meu Perfil",
+    "plannedVisits": "Visitas Planificadas",
+    "planning": "Planificación",
+    "realtime": "Posición dos empregados",
+    "activityHistory": "Histórico de actividades",
+    "sensorData": "Datos de Sensores",
+    "shapefile": "Importador de Shapefile",
+    "staff": "Persoal",
+    "staticPages": "Páxinas Estáticas",
+    "userManagement": "Xestión de usuarios",
+    "management": "Xestión",
+    "mobilityAnalysis": "Análise de movilidade",
+    "mobilityQuery": "Consultas sobre movilidade",
+    "visits_record": "Histórico de visitas",
+    "synthetic": "Mapas sintéticos",
+    "thematic": "Mapas temáticos",
+    "historic": "Mapas históricos",
+    "ideac": "Nodo ideAC",
+    "information": "Información",
+    "province_report": "Ficha provincial",
+    "municipal_report": "Ficha municipal",
+    "personalized_report": "Ficha personalizada",
+    "predefined_reports": "Informes predefinidos",
+    "data_download": "Descarga de datos",
+    "search": "Busca",
+    "search_tool": "Buscador",
+    "gazetteer": "Nomenclátor",
+    "metadata": "Metadatos",
+    "documentation": "Documentación",
+    "help": "Axuda",
+    "user_manual": "Axuda en PDF",
+    "faq": "Preguntas frecuentes",
+    "collaborators": "Colaboración",
+    "der_documents": "Traballos derivados",
+    "dissemination_material": "Documentos de difusión",
+    "signergias": "Signergias",
+    "introduction": "Inicio",
+    "documents": "Documentos",
+    "news": "Novidades",
+    "links": "Ligazóns de interese",
+    "giseiel": "gisEIEL",
+    "functionality": "Funcionalidades",
+    "user_management": "Usuarios",
+    "work_scope": "Ámbito de traballo",
+    "map_layers": "Mapas e capas",
+    "editing_digitizing": "Edición e Dixitalización",
+    "cartography_reports": "Cartografía e Informes",
+    "eiel_tools": "Ferramentas para a EIEL",
+    "giseiel_basic": "gisEIEL - Básico",
+    "license": "Licenza",
+    "community": "Comunidade",
+    "previous_versions": "Versións Anteriores"
+  },
+  "modal": {
+    "delete_dialog": "<p>Esta acción é permanente. <b>¿Desexa continuar?</b></p>",
+    "delete_title": "Eliminar elemento"
+  },
+  "notLogged": "sen autenticar",
+  "badRequestError": "Hai erros na petición enviada",
+  "psql": {
+    "exception": "Aconteceu un erro coa base de datos"
+  },
+  "iGImage": {
+    "error": {
+      "id-exists": "Unha nova iGImage non pode ter un ID",
+      "id-not-exists": "Actualizando unha iGImage sen un ID"
+    }
+  },
+  "upload": {
+    "file_required": "Ficheiro non subido",
+    "invalid_extension": "Formato non soportado '{param}'"
+  },
+  "geolocation": {
+    "geolocator_not_supported": "Xeolocalizador non soportado"
+  },
+  "import": {
+    "column_duplicated": "Columna '{param}' duplicada",
+    "crs_not_valid": "CRS non válido '{param}'",
+    "date_format_custom_not_provided": "Formato de data personalizado non subministrado",
+    "date_format_not_provided": "Formato de data non subministrado",
+    "date_cannot_be_parsed": "A data '{param}' non pode ser convertida",
+    "empty_value_exception": "Sen valores recibidos para o campo '{param}'",
+    "encoding_not_provided": "Codificación non subministrada",
+    "entity_pk_already_exists": "Unha entidade con chave primaria '{param}' xa existe",
+    "excel_cell_type_not_supported": "Tipo de cela Excel cell non soportado",
+    "excel_date_fields_not_supported": "Campos Excel con datas non soportados",
+    "excel_row_empty": "Fila Excel {param} baleira",
+    "field_point_required_properties": "Non se subministraron todos os valores obrigatorios para crear un punto",
+    "file_or_url_not_provided": "Fichero o URL no suministrados",
+    "file_in_url_not_exists": "URL subministrada non contén ficheiros",
+    "file_not_provided": "Ficheiro non subministrado",
+    "file_not_supported": "Ficheiro non soportado",
+    "unable_to_read_file": "O ficheiro non se puido ler",
+    "gis_file_not_provided": "Ficheiro GIS non subministrado",
+    "gis_file_repeated": "Ficheiro GIS '{param}' repetido",
+    "gis_mandatory_files": "Faltan os ficheiros GIS obrigatorios",
+    "date_invalid_pattern": "O patrón de datas suministrado non é válido",
+    "invalid_fk": "Chave foránea inválida '{param}'",
+    "latitude_min_max_equals": "A latitude mínima igual á lonxitude máxima'{param}'",
+    "latitude_not_valid": "Latitude non válida '{param}'",
+    "latitude_reversed": "Latitude revertida '{param}'",
+    "longitude_not_valid": "Lonxitude inválida '{param}'",
+    "longitude_reversed": "Lonxitude revertida '{param}'",
+    "column_none": "Sen columnas subministradas",
+    "ods_undefined_rows_cols": "Non se definiron filas / columnas para o ficheiro ods",
+    "url_not_provided": "URL non subministrada",
+    "url_not_valid": "Non se subministrou ficheiro ou URL",
+    "value_format_exception": "Valor '{param}' inválido",
+    "wrong_column_size": "Columna '{params}' ten un número inválido de columnas"
+  },
+  "internalServerError": "Aconteceu un erro interno no servidor",
+  "invalid_id_type": "ID inválido: debe ser de tipo {type}",
+  "page_not_found": {
+    "title": "Páxina non atopada",
+    "subtitle": "A páxina á que estás intentando acceder non existe",
+    "body": "Intenta volver á páxina principal e repetir a acción, ou comproba a URL que introduciches.",
+    "button": "Ir á páxina principal"
+  },
+  "resource_not_found": {
+    "title": "Recurso non atopado",
+    "subtitle": "O recurso solicitado non existe no servidor",
+    "body": "Intenta volver á páxina principal e repetir a acción, ou comproba a URL que introduciches.",
+    "button": "Ir á páxina principal",
+    "route_param": "recurso_non_atopado"
+  },
+  "waitingServer": "Esperando resposta do servidor..."
+}

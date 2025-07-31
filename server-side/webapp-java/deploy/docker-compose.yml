@@ -1,0 +1,73 @@
+version: "3"
+services:
+  server:
+    build:
+      context: ../server
+      dockerfile: Dockerfile
+    container_name: wasm-server-side-server
+    depends_on:
+      - postgres
+    networks:
+      - local
+    volumes:
+      - "../server/:/app/server/"
+    restart: unless-stopped
+    environment:
+      - SPRING_DATASOURCE_HOST=${PG_CONTAINER_NAME}
+      - SPRING_DATASOURCE_DATABASE=${POSTGRES_DB}
+      - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
+      - PROPERTIES_CLIENTHOST=${SERVER_CLIENTHOST}
+
+  client:
+    build:
+      context: ../client
+      dockerfile: ../client/deploy/Dockerfile
+    container_name: wasm-server-side-client
+    networks:
+      - local
+    restart: unless-stopped
+
+  postgres:
+    container_name: ${PG_CONTAINER_NAME}
+    build:
+      context: ./postgres
+      dockerfile: postgres.dockerfile
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASS: ${POSTGRES_PASSWORD}
+      PGDATA: ${PGDATA}
+      POSTGRES_MULTIPLE_EXTENSIONS: ${POSTGRES_MULTIPLE_EXTENSIONS}
+      POSTGRES_RUN_AS_ROOT: ${POSTGRES_RUN_AS_ROOT}
+    volumes:
+      - postgres:/data/postgres
+    networks:
+      - local
+    ports:
+      - "5444:5432"
+    restart: on-failure
+    healthcheck:
+      test: "PGPASSWORD=${POSTGRES_PASSWORD} pg_isready -h 127.0.0.1 -U ${POSTGRES_USER} -d ${POSTGRES_DB}"
+
+  nginx:
+    container_name: ${NGINX_CONTAINER_NAME}
+    build:
+      context: ./nginx
+      dockerfile: nginx.dockerfile
+    networks:
+      - local
+    volumes:
+      - ../client/:/app/client/
+    ports:
+      - "86:80"
+    restart: unless-stopped
+
+
+volumes:
+  postgres:
+    external: false
+
+networks:
+  local:
+    driver: bridge

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Leaflet GeoJSON Filter on View</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <div id="map" style="height: 100vh;"></div>
+
+    <script>
+        const map = L.map('map').setView([40, -100], 4);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18
+        }).addTo(map);
+
+        let geojsonLayer = null;
+        let allFeatures = null; // to store all loaded features
+        window.lastFilterTime = 0;
+
+        // Load your large GeoJSON file
+        fetch('/geojsons/geom_1.geojson') // or load from local if bundled
+            .then(response => response.json())
+            .then(data => {
+                allFeatures = data.features;
+                updateVisibleFeatures();
+            });
+
+        function updateVisibleFeatures() {
+            if (!allFeatures) return;
+
+            const bounds = map.getBounds();
+            const t0 = performance.now();
+
+            console.time('Filter GeoJSON');
+
+            const filtered = allFeatures.filter(feature => {
+                const coords = feature.geometry.coordinates;
+                let latlng;
+
+                switch (feature.geometry.type) {
+                    case 'Point':
+                        latlng = L.latLng(coords[1], coords[0]);
+                        return bounds.contains(latlng);
+
+                    case 'Polygon':
+                    case 'MultiPolygon':
+                    case 'LineString':
+                    case 'MultiLineString':
+                        return L.geoJSON(feature).getBounds().intersects(bounds);
+
+                    default:
+                        return false;
+                }
+            });
+
+            const t1 = performance.now();
+            window.lastFilterTime = +(t1 - t0).toFixed(6); // Precision in microseconds
+
+            console.log(`Filtered ${filtered.length} features in ${window.lastFilterTime} ms`);
+
+            // Update the layer
+            if (geojsonLayer) {
+                geojsonLayer.remove();
+            }
+
+            geojsonLayer = L.geoJSON(filtered);
+            geojsonLayer.addTo(map);
+        }
+
+        map.on('moveend zoomend', updateVisibleFeatures);
+
+        // Expose functions for Selenium or external JS
+        window.setMapView = function (bounds, zoom) {
+            map.setView(map.getCenter(), zoom); // apply zoom
+            map.fitBounds(bounds);              // apply bounding box
+        };
+
+        window.getLastFilterTime = function () {
+            return window.lastFilterTime;
+        };
+    </script>
+</body>
+
+</html>

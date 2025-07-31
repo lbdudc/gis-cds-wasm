@@ -1,0 +1,4 @@
+*.geojson
+
+node_modules
+pnpm-lock.yaml

@@ -1,0 +1,25 @@
+{
+  "calendar": {
+    "accept": "Accept",
+    "cancel": "Cancel",
+    "date": "Date",
+    "endTime": "End Time",
+    "initTime": "Init Time",
+    "dateFormat": "DD/MM/YYYY format",
+    "timeFormat": "HH:MM format",
+    "endTimeValidationError": "End time must be later than start time",
+    "timeNotNull": "You must specify a time",
+    "dateNotNull": "You must specify a date",
+    "initDateTime": "Init date and time",
+    "endDateTime": "End date and time",
+    "dayOfWeek": {
+      "0": "Sun {dayAsNumber}",
+      "1": "Mon {dayAsNumber}",
+      "2": "Tue {dayAsNumber}",
+      "3": "Wed {dayAsNumber}",
+      "4": "Thu {dayAsNumber}",
+      "5": "Fry {dayAsNumber}",
+      "6": "Sat {dayAsNumber}"
+    }
+  }
+}

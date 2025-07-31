@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Leaflet GeoJSON Filter on View</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <div id="map" style="height: 100vh;"></div>
+
+    <script type="module">
+        import { loadWASM } from "./loadWasm.js";
+
+        function importWasmStr(heap, ptr, len) {
+            const bytes = heap.subarray(ptr, ptr + len);
+            const decoder = new TextDecoder("utf-8");
+            return decoder.decode(bytes);
+        }
+
+        const map = L.map('map').setView([40, -100], 4);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18
+        }).addTo(map);
+
+        let geojsonLayer = null;
+        window.lastFilterTime = 0;
+
+        const wasmModule = await loadWASM();
+
+        async function updateVisibleFeatures() {
+            if (!wasmModule) return;
+
+            const bounds = map.getBounds();
+
+            const south = bounds.getSouth();
+            const west = bounds.getWest();
+            const north = bounds.getNorth();
+            const east = bounds.getEast();
+            const zoom = map.getZoom();  
+
+            const t0 = performance.now();
+
+            const geojsonStr = wasmModule._windowquery(west, south, east, north, zoom);
+            const len = wasmModule._strlength(geojsonStr);
+            const jsonStr = importWasmStr(wasmModule.HEAPU8, geojsonStr, len);
+
+            const t1 = performance.now();
+            window.lastFilterTime = +(t1 - t0).toFixed(6);
+
+            const geojson = JSON.parse(jsonStr);
+
+            if (geojsonLayer) {
+                geojsonLayer.remove();
+            }
+
+            geojsonLayer = L.geoJSON(geojson).addTo(map);
+        }
+
+        map.on('moveend zoomend', updateVisibleFeatures);
+
+        updateVisibleFeatures();
+
+        // Expose functions for Selenium or external JS
+        window.setMapView = function (bounds, zoom) {
+            map.setView(map.getCenter(), zoom); // apply zoom
+            map.fitBounds(bounds);              // apply bounding box
+        };
+
+        window.getLastFilterTime = function () {
+            return window.lastFilterTime;
+        };
+    </script>
+</body>
+
+</html>

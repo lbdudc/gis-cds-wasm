@@ -1,0 +1,41 @@
+version: "3"
+services:
+  client:
+    build:
+      context: ../client
+      dockerfile: ../client/deploy/Dockerfile
+    container_name: wasm-server-side-node-client
+    networks:
+      - local
+    restart: unless-stopped
+
+  server:
+    container_name: wasm-server-side-node-server
+    hostname: server
+    networks:
+      - local
+    build:
+      context: ../server 
+      dockerfile: ../server/Dockerfile
+
+  nginx:
+    container_name: ${NGINX_CONTAINER_NAME}
+    build:
+      context: ./nginx
+      dockerfile: nginx.dockerfile
+    networks:
+      - local
+    volumes:
+      - ../client/:/app/client/
+    ports:
+      - "89:80"
+    restart: unless-stopped
+
+
+volumes:
+  postgres:
+    external: false
+
+networks:
+  local:
+    driver: bridge

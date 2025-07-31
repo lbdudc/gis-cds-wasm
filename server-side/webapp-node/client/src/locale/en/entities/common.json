@@ -1,0 +1,38 @@
+
+{
+  "back": "Back",
+  "cancel": "Cancel",
+  "confirmation": "Are you sure you want to continue?",
+  "continue": "Continue",
+  "deleteEntity": "Delete entity",
+  "edit": "Edit",
+  "export": "Export",
+  "new": "New",
+  "permanentAction": "This action will be permanent",
+  "remove": "Remove",
+  "save": "Save",
+  "search": "Search",
+  "showFilters": "Show filters",
+  "hideFilters": "Hide filters",
+  "showInMap": "Show in map",
+  "propertySelected": "Property selected",
+  "mapSelected": "Map selected",
+  "selectMapProperties": "Select map properties",
+  "error": {
+    "required": "This field is mandatory.",
+    "length": {
+      "min": "This field must have at least {value} characters",
+      "max": "This field mustn't have more than {value} characters"
+    },
+    "regex": {
+      "customPattern": "This field doesn't much expected format.",
+      "emailPattern": "This field doesn't match email format.",
+      "ipPattern": "This field doesn't match IP format.",
+      "urlPattern": "This field doesn't match URL format."
+    },
+    "value": {
+      "min": "This field must be greater or equals than {value}",
+      "max": "This field must be lower or equals than {value}"
+    }
+  }
+}

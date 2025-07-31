@@ -1,0 +1,24 @@
+
+{
+  "t_raster": {
+    "name": "Raster",
+    "prop": {
+        
+        "id": "id",
+        "geometry": "geometry",
+        "level": "level"
+    },
+    "messages": {
+      "create.success": "Raster creado.",
+      "update.success": "Raster actualizado.",
+      "delete.success": "Raster eliminado."
+    },
+    "error": {
+      "id-exists": "A new raster cannot already have a id",
+      "id-not-exists": "Updating a raster without a id",
+      "form-errors": "Este raster no se puede guardar debido a errores en el formulario."
+    },
+    "headers": {
+    }
+  }
+}

@@ -1,0 +1,10 @@
+
+{
+  "datePicker": {
+    "firstDayOfTheWeek": "1",
+    "prevMonthAriaLabel": "Mes anterior",
+    "nextMonthAriaLabel": "Mes siguiente",
+    "nextYearAriaLabel": "Siguiente año",
+    "prevYearAriaLabel": "Año anterior"
+  }
+}

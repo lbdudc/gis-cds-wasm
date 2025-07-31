@@ -1,0 +1,43 @@
+{
+  "mapViewer": {
+    "mapViewer": "Visor de Mapa",
+    "cancel": "Cancelar",
+    "close": "Pechar",
+    "downloadFormat": "Formato de descarga",
+    "export": "Exportar",
+    "exportManager": "Xestor de exportacións",
+    "listLayerElements": "Listar elementos da capa",
+    "margin": "Marxe",
+    "portrait": "Retrato",
+    "scale": "Escala",
+    "searchInMap": "Buscar no mapa...",
+    "urlToShare": "URL para compartir",
+    "routeCompletationError": "Por favor, completa ou cancela a ruta antes de continuar",
+    "chooseEntity": "Escolla a entidade que desexa listar",
+    "mustSelectAnExportOption": "Debe escoller polo menos un dos formatos de exportación",
+    "addALayer": "Non hai capas engadidas. Engade unha ",
+    "addALayer-link": "aquí",
+    "map": "Mapa",
+    "layer-label": {
+      "OpenStreetMap-Mapnik": "OpenStreetMap.Mapnik",
+      "Esri-WorldStreetMap": "Esri.WorldStreetMap",
+      "Stamen-Terrain": "Stamen.Terrain",
+      "Stamen-TonerLite": "Stamen.TonerLite",
+      "raster-geometry": "raster-geometry",
+      "raster-geometry-1": "raster-geometry-1",
+      "raster-geometry-2": "raster-geometry-2",
+      "raster-geometry-3": "raster-geometry-3",
+      "raster-geometry-4": "raster-geometry-4",
+      "raster-geometry-5": "raster-geometry-5",
+      "raster-geometry-6": "raster-geometry-6",
+      "raster-geometry-7": "raster-geometry-7",
+      "raster-geometry-8": "raster-geometry-8",
+      "raster-geometry-9": "raster-geometry-9",
+      "raster-geometry-10": "raster-geometry-10"
+    },
+    "style-legend-label": {},
+    "map-label": {
+      "default": "Mapa por defecto"
+    }
+  }
+}
