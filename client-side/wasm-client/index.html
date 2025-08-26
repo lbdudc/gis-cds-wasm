@@ -12,45 +12,29 @@
     <div id="map" style="height: 100vh;"></div>
 
     <script type="module">
-        import { loadWASM } from "./loadWasm.js";
+    const map = L.map('map').setView([40, -100], 4);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+    }).addTo(map);
 
-        function importWasmStr(heap, ptr, len) {
-            const bytes = heap.subarray(ptr, ptr + len);
-            const decoder = new TextDecoder("utf-8");
-            return decoder.decode(bytes);
+    let geojsonLayer = null;
+    window.lastFilterTime = 0;
+
+    const worker = new Worker("windowquery_worker.js");
+
+    worker.onmessage = function (e) {
+        const { type, geojson, filterTime, error } = e.data;
+
+        if (type === "ready") {
+            updateVisibleFeatures();
         }
 
-        const map = L.map('map').setView([40, -100], 4);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 18
-        }).addTo(map);
+        if (type === "error") {
+            console.error("Worker error:", error);
+        }
 
-        let geojsonLayer = null;
-        window.lastFilterTime = 0;
-
-        const wasmModule = await loadWASM();
-
-        async function updateVisibleFeatures() {
-            if (!wasmModule) return;
-
-            const bounds = map.getBounds();
-
-            const south = bounds.getSouth();
-            const west = bounds.getWest();
-            const north = bounds.getNorth();
-            const east = bounds.getEast();
-            const zoom = map.getZoom();  
-
-            const t0 = performance.now();
-
-            const geojsonStr = wasmModule._windowquery(west, south, east, north, zoom);
-            const len = wasmModule._strlength(geojsonStr);
-            const jsonStr = importWasmStr(wasmModule.HEAPU8, geojsonStr, len);
-
-            const t1 = performance.now();
-            window.lastFilterTime = +(t1 - t0).toFixed(6);
-
-            const geojson = JSON.parse(jsonStr);
+        if (type === "result") {
+            window.lastFilterTime = filterTime;
 
             if (geojsonLayer) {
                 geojsonLayer.remove();
@@ -58,21 +42,34 @@
 
             geojsonLayer = L.geoJSON(geojson).addTo(map);
         }
+    };
 
-        map.on('moveend zoomend', updateVisibleFeatures);
+    function updateVisibleFeatures() {
+        const bounds = map.getBounds();
 
-        updateVisibleFeatures();
+        worker.postMessage({
+            west: bounds.getWest(),
+            south: bounds.getSouth(),
+            east: bounds.getEast(),
+            north: bounds.getNorth(),
+            zoom: map.getZoom()
+        });
+    }
 
-        // Expose functions for Selenium or external JS
-        window.setMapView = function (bounds, zoom) {
-            map.setView(map.getCenter(), zoom); // apply zoom
-            map.fitBounds(bounds);              // apply bounding box
-        };
+    map.on('moveend zoomend', updateVisibleFeatures);
 
-        window.getLastFilterTime = function () {
-            return window.lastFilterTime;
-        };
-    </script>
+    updateVisibleFeatures();
+
+    // Expose functions for Selenium or external JS
+    window.setMapView = function (bounds, zoom) {
+        map.setView(map.getCenter(), zoom); // apply zoom
+        map.fitBounds(bounds);              // apply bounding box
+    };
+
+    window.getLastFilterTime = function () {
+        return window.lastFilterTime;
+    };
+</script>
 </body>
 
 </html>
