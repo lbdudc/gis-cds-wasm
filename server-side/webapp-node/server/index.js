@@ -8,23 +8,48 @@ app.use(cors({
 }));
 
 const port = 3000;
-let wasmModule = null;
+const poolSize = 5; // poolSize: how many WASM instances to keep in memory
+let wasmPool = [];
 
-function importWasmStr(wasmMem, strPtr, strLen) {
-  let view = new DataView(wasmMem.buffer, strPtr, strLen);
-  let dec = new TextDecoder();
-  return dec.decode(view);
+async function initPool() {
+  for (let i = 0; i < poolSize; i++) {
+    wasmPool.push(await loadWASM());
+  }
 }
 
+function getInstance() {
+  if (wasmPool.length === 0) return null;
+  return wasmPool.pop();
+}
 
-app.get('/wasm', (req, res) => {
-  const { xmin, ymin, xmax, ymax, zoom } = req.query;
-  const result = wasmModule._windowquery(parseFloat(xmin), parseFloat(ymin), parseFloat(xmax), parseFloat(ymax), parseInt(zoom));
-  const wasmStrLen = wasmModule._strlength(result);
-  const responseJson = JSON.parse(importWasmStr(wasmModule.HEAPU8, result, wasmStrLen));
-  res.json(responseJson);
+function releaseInstance(instance) {
+  wasmPool.push(instance);
+}
+
+app.get('/wasm', async (req, res) => {
+  const instance = getInstance();
+  if (!instance) {
+    return res.status(503).json({ error: "No WASM instances available" });
+  }
+
+  try {
+    const { xmin, ymin, xmax, ymax, zoom } = req.query;
+    const result = instance._windowquery(parseFloat(xmin), parseFloat(ymin), parseFloat(xmax), parseFloat(ymax), parseInt(zoom));
+    const wasmStrLen = instance._strlength(result);
+    const jsonStr = new TextDecoder().decode(instance.HEAPU8.subarray(result, result + wasmStrLen));
+    const responseJson = JSON.parse(jsonStr);
+
+    instance._free(result); // Free the memory allocated in WASM
+
+    res.json(responseJson);
+  } catch (err) {
+    console.error("Error en /wasm:", err);
+    res.status(500).json({ error: "Internal WASM error" });
+  } finally {
+    releaseInstance(instance);
+  }
 });
 
 app.listen(port, async () => {
-  wasmModule = await loadWASM();
+  await initPool();
 });

@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 const fs = require('fs');
 
 async function measureApiResponseTimes() {
-  const bboxes = JSON.parse(fs.readFileSync('../../public/tests/test15per100.json', 'utf8'));
+  const bboxes = JSON.parse(fs.readFileSync('../../../public/tests/test15per100.json', 'utf8'));
 
   const NUM_ITERATIONS = 100;
   const responseTimes = [];
