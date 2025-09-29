@@ -18,14 +18,16 @@
     }).addTo(map);
 
     let geojsonLayer = null;
+    let workerReady = false;
     window.lastFilterTime = 0;
 
-    const worker = new Worker("windowquery_worker.js");
+    const worker = new Worker("windowquery_worker.js", {type: "module"});
 
     worker.onmessage = function (e) {
         const { type, geojson, filterTime, error } = e.data;
 
         if (type === "ready") {
+            workerReady = true;
             updateVisibleFeatures();
         }
 
@@ -45,6 +47,7 @@
     };
 
     function updateVisibleFeatures() {
+        if (!workerReady) return;
         const bounds = map.getBounds();
 
         worker.postMessage({

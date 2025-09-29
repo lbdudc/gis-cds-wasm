@@ -1,4 +1,4 @@
-importScripts("./loadWasm.js");
+import { loadWASM } from "./loadWasm.js";
 
 let wasmModule = null;
 
@@ -22,14 +22,15 @@ onmessage = function (e) {
   const { west, south, east, north, zoom } = e.data;
 
   const t0 = performance.now();
-
   const geojsonStr = wasmModule._windowquery(west, south, east, north, zoom);
+  const t1 = performance.now();
+
   const len = wasmModule._strlength(geojsonStr);
   const jsonStr = importWasmStr(wasmModule.HEAPU8, geojsonStr, len);
 
-  const geojson = JSON.parse(jsonStr);
+  wasmModule._free(geojsonStr);
 
-  const t1 = performance.now();
+  const geojson = JSON.parse(jsonStr);
 
   postMessage({
     type: "result",
